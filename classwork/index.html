@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color property</title>
+   <!-- <link rel="stylesheet" href="index.css">-->
+    
+    <style>
+        *{
+            margin:0;
+            padding:0;
+
+        }
+        /*rgb method*/
+        .back_learn{
+            color: rgb(26, 27, 27);
+            background-color:rgb(52, 148, 155);
+        }
+        /*hex-method*/
+        #hex_learn{
+            color:#b53d3d;
+            background-color:#1d8358
+        }
+                         /*tranparency of background*/
+        #transparency{
+            color:#322929;
+            background-color: rgba(208,63,63,0.25);
+        }
+                        /*height and width*/
+        #icon{
+            height:50px;
+            width:50px;
+            background-image: url(jpg2png.zip);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+                       /*isibility propervty*/
+        .box{
+            height:50px;
+            width:50px;         
+        }
+        #box1{background-color: bisque;visibility:visible;text-align: left;text-decoration:underline;text-decoration-color: blue;text-transform: uppercase;border: 2px solid black;padding:10px;margin:15px 10px 5px 20px;}
+        #box2{background-color: aqua;visibility: visible;text-align: center;text-decoration: line-through;text-decoration-color: darkslategray;border:2px dotted black; padding:10px;margin:15px 10px 5px 20px;}
+        h2{
+            text-decoration: overline;
+        }
+        /*line height property*/
+        #first{line-height: 20px;}
+        #second{line-height: 20px;}
+        /*font size property*/
+        #one{font-size: smaller;font-weight:100 ;font-style: italic;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+        #two{font-size: small;font-weight: 900;font-style: oblique;font-family: 'Times New Roman', Times, serif;}
+        #three{font-size: medium;font-weight: 700;font-style: normal;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+        #fourth{font-size: larger;font-weight: 400;}
+        /*padding property*/
+        #button1{
+            height:50px;
+            width:50px;
+            color:black;
+            padding:5px 5px 5px 5px;
+            background-color: aqua;
+            font-weight: 700;
+            font-style: oblique;
+            margin:15px 10px 5px 20px;
+            border:2px solid black;
+            border-radius: 10px;
+
+        }
+        .b{
+            height:100px;
+            width:100px;
+            background-color: chocolate;
+            margin:5px;
+            display:inline-block;
+            padding:30px;
+            border:2px solid black;
+            border-width: 10px;
+            border-radius:10px;
+           
+           
+
+        }
+        #div1{
+            position:static;
+            background-color: #b53d3d;
+            margin:10px;
+            height:70px;
+            width:70px;
+            border:2px solid black;
+            padding:20px 14p 15px 20px;
+        }
+        #div2{
+            position:relative;
+            top:16px;
+            left:10px;
+            background-color:rgb(64, 58, 173);
+            margin:10px;
+            height:70px;
+            width:70px;
+            border:2px solid black;
+            padding:20px 19px 15px 20px;
+        }
+        #div3{
+            position:fixed;
+            background-color:rgb(64, 58, 173);
+            margin:10px;
+            height:70px;
+            width:70px;
+            border:2px solid black;
+            padding:20px 19px 15px 20px;
+        }
+        #div4{
+            position:sticky;
+            top:16px;
+            left:10px;
+            background-color:rgb(64, 58, 173);
+            margin:10px;
+            height:70px;
+            width:70px;
+            border:2px solid black;
+            padding:20px 19px 15px 20px;
+        }
+        #list{
+            background-color: aqua;
+            margin:10px;
+            border:2px solid black;
+        }
+    </style>
+    
+</head>
+<body>    <!--this is the comment-->
+    
+
+    <h1 id="top_heading">this is the heading</h1>
+    <p class="article">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, qui?</p>
+    <div id="first">First div</div>
+    <div id="second">Second div</div>
+    <div id="jhu"></div>-write #and id name and press enter di will be automatically created
+    <p class="article" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quas eaque tempora necessitatibus facilis quasi.</p>
+    <div id="second"><p>this is the decendant of di with id second</p></div><!-- only the paragraph that is in the di will be -->
+   <div class="back_learn"> background color</div> 
+   <div id="hex_learn">this is the hex model</div>
+   <div id="transparency">transparency of background using rgba</div>
+   <!--height and width-->
+   <div id="icon" ></div>
+                                          <!--wisibility property-->
+   <div id="box1" class="box">box1</div>
+   <div id="box2" class="box">box2</div>
+
+                                             <!--TEXT PROPERTIES-->
+<!--text-align property-->
+<h2>this is my text</h2>
+<a id="link" href="#">this is a link</a>
+
+<!--line hight property-->
+
+<p id="first">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste consectetur tenetur voluptatibus. Unde ratione sapiente eius molestias natus dolorem enim.</p>
+<p id="second">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga soluta fugit enim necessitatibus nemo assumenda.</p><br>
+
+
+<!--font property-->
+
+<p id="one">smallest font</p>
+<p id="two">number two smallest</p>
+<p id="three">second vlargest font </p>
+<p id="fourth">largest size font</p>
+
+                                               <!--BOX MODEL-->
+                                               <!--padding property-->
+
+<button id="button1">click me</button><br>
+                                            <!--DISPLAY AND POSITION-->
+<div id="b1" class="b">box1st</div>
+<div id="b2" class="b">box2nd</div>
+<!--position property-->
+<div id="div1">1 static</div>
+<div id="div2">2 relative</div>
+<div id="div3">3 fixed</div>
+<div id="div4">4 absolute</div>
+<div id="list">
+<ul><li>option1</li></ul>
+<ul><li>option2</li></ul>
+<ul><li>option3</li></ul></div>
+
+ 
+
+ 
+ 
+   
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
