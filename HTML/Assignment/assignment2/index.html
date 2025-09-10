@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        background-color: rgb(155, 148, 162);
+      }
+        .calculator{
+            background-color: rgb(102, 96, 96);
+            height:680px;
+            width:500px;
+            margin:20px;
+            border:9px solid black;
+            
+        }
+.screen{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:14px;
+    margin:10px;
+    border-radius:10px;
+    border:5px solid rgb(78, 70, 70);
+    min-height:74px;
+    display:flex;
+    font-weight: 500;
+    font-size:30px;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-end}
+    .keys{
+       display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 9px;
+    margin-top: 12px;
+    
+    }
+    .keys button {
+    width: 100%;   /* full width of grid cell */
+    height: 80px;  /* same height for all */
+    font-size: 22px;
+}
+.keys button:hover {
+  background-color: #555;   /* darker shade */
+  color: white;             /* change text color */
+  transform: scale(1.09);   /* slight zoom */
+     
+}
+
+      .button{
+         padding:16px;
+            display:flex;
+            border-radius:10px;
+            border:0;
+            font-size:18px;
+            cursor:pointer;
+            box-shadow:inset 0 -3px 0 rgba(0,0,0,.2)
+      }
+      button.operation{
+            background:linear-gradient(180deg,#13304a,#0e2436);
+            font-weight:600;
+            color: white;
+        }
+
+    button.equal {
+            grid-column: span 2;
+            background: #4CAF50;
+            color: white;
+        }
+          button.clear {
+            background: #d9534f;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+   <div class="calculator" role="application" aria-label="Simple calculator">
+    <div class="screen" id="screen">
+      <div class="small" id="history">&nbsp;</div>
+      <div class="result" id="display">0</div>
+    </div>
+
+    <div class="keys">
+      <button class="clear" data-action="clear">AC</button>
+      <button class="clear" data-action="back">⌫</button>
+      <button data-value="%">%</button>
+      <button class="operation" data-value="/">÷</button>
+
+      <button data-value="7">7</button>
+      <button data-value="8">8</button>
+      <button data-value="9">9</button>
+      <button class="operation" data-value="*">×</button>
+
+      <button data-value="4">4</button>
+      <button data-value="5">5</button>
+      <button data-value="6">6</button>
+      <button class="operation" data-value="-">−</button>
+
+      <button data-value="1">1</button>
+      <button data-value="2">2</button>
+      <button data-value="3">3</button>
+      <button class="operation" data-value="+">+</button>
+
+      <button data-value="+/-">+/-</button>
+      <button data-value="0">0</button>
+      <button data-value=".">.</button>
+      <button class="equal" data-action="equals">=</button>
+    </div>
+  </div>
+</body>
+</html>
