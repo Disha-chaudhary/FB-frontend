@@ -1,0 +1,5 @@
+// console.log("hello")
+// alert("welcome to this site")
+const name=prompt("enter the user name:")
+console.log(name)
+alert("hello the name is"+name)
