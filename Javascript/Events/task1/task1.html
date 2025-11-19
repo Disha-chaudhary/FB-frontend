@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Change Button</title>
+</head>
+
+<body>
+
+<button id="colorBtn" style="padding: 10px 20px; font-size: 18px;">
+    Click Me!
+</button>
+
+<script>
+    function getRandomColor() {
+       
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    const btn = document.getElementById("colorBtn");
+
+    btn.addEventListener("click", function() {
+        btn.style.backgroundColor = getRandomColor();
+    });
+</script>
+
+</body>
+</html>
