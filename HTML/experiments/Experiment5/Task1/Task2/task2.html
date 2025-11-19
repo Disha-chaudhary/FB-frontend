@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eligibility Checker</title>
+</head>
+<body>
+
+<h2>Eligibility Checker (If-Else)</h2>
+
+<script>
+    let age = prompt("Enter your age:");
+
+    if (age === null || age.trim() === "") {
+        document.write("❌ Please enter a valid age.");
+    } else {
+        age = Number(age);
+
+        if (age >= 18) {
+            document.write("You are eligible!");
+        } else {
+            document.write(" You are NOT eligible.");
+        }
+    }
+</script>
+
+</body>
+</html>
