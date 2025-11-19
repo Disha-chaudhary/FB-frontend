@@ -39,6 +39,7 @@
         li button {
             margin-left: 10px;
         }
+       
     </style>
 </head>
 <body>
@@ -46,11 +47,18 @@
     <h2>To Do List</h2>
 
     <input id="taskInput" type="text" placeholder="Enter task">
+
+    <label for="course">Choose Priority:</label>
+<select id="importance">
+  <option value="low">low</option>
+  <option value="Medium">Medium</option>
+  <option value="high">high</option>
+</select>
     <button onclick="addTask()">Add Task</button>
 
     <ul id="taskList"></ul>
 
-<script>
+ <script>
 
 
 var saved = localStorage.getItem("tasks");
@@ -78,7 +86,7 @@ function addTask() {
     saveTasks();
     showTasks();
 
-    input.value = "";
+    input.value="";
 }
 
 function deleteTask(index) {
@@ -87,14 +95,7 @@ function deleteTask(index) {
     showTasks();
 }
 
-function editTask(index) {
-    var newText = prompt("Edit task:", tasks[index]);
-    if (newText !== null) {
-        tasks[index] = newText;
-        saveTasks();
-        showTasks();
-    }
-}
+
 
 function showTasks() {
     var list = document.getElementById("taskList");
@@ -103,14 +104,15 @@ function showTasks() {
     for (var i = 0; i < tasks.length; i++) {
         var li = document.createElement("li");
         li.innerHTML =
-            tasks[i] +
-            " <button onclick='editTask(" + i + ")'>Edit</button>" +
+            tasks[i]  +
             " <button onclick='deleteTask(" + i + ")'>Delete</button>";
+           
         list.appendChild(li);
     }
 }
 
 </script>
+
 
 </body>
 </html>
