@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery Loader</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .img-box {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.8s ease-in;
+        }
+
+        .img-box img.fade-in {
+            opacity: 1;
+        }
+
+        #loadMore {
+            margin-top: 25px;
+            padding: 12px 25px;
+            border: none;
+            background: #06d6a0;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #loadMore:hover {
+            background: #04b987;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Image Gallery Loader</h1>
+
+    <div id="gallery"></div>
+    <button id="loadMore">Load More</button>
+
+    <script>
+        const gallery = document.getElementById("gallery");
+        const loadMoreBtn = document.getElementById("loadMore");
+
+        async function fetchImages() {
+            try {
+              
+                const url = `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100)}&limit=9`;
+                const response = await fetch(url);
+                const data = await response.json();
+
+                data.forEach(photo => {
+                    const imgBox = document.createElement("div");
+                    imgBox.className = "img-box";
+
+                    const img = document.createElement("img");
+                    img.src = `https://picsum.photos/id/${photo.id}/500/500`;
+
+                    img.onload = () => img.classList.add("fade-in");
+
+                    imgBox.appendChild(img);
+                    gallery.appendChild(imgBox);
+                });
+
+            } catch (error) {
+                console.log("Error fetching images:", error);
+            }
+        }
+
+        loadMoreBtn.addEventListener("click", fetchImages);
+
+        
+        fetchImages();
+    </script>
+</body>
+</html>
