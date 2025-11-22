@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dancing Box</title>
+</head>
+
+<body>
+
+<div id="box"
+    style="
+        width:100px;
+        height:100px;
+        background:skyblue;
+        margin-left:0px;
+        transition:0.3s;
+        cursor:pointer;
+    ">
+</div>
+
+<script>
+    const box = document.getElementById("box");
+    let move = 0;
+
+    box.addEventListener("dblclick", function() {
+        move += 10;                           // increase position
+        box.style.marginLeft = move + "px";   // shift the box
+    });
+</script>
+
+</body>
+</html>

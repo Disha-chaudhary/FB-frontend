@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Character Counter</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+      font-size: 16px;
+      padding: 8px;
+    }
+    #countBox {
+      margin-top: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>Live Character Counter</h2>
+
+  <textarea id="textArea" maxlength="100" placeholder="Type here..."></textarea>
+  <div id="countBox">Characters left: 100</div>
+
+  <script>
+    const area = document.getElementById("textArea");
+    const countBox = document.getElementById("countBox");
+    const max = 100;
+
+    area.addEventListener("input", function () {
+      let remaining = max - area.value.length;
+      countBox.textContent = "Characters left: " + remaining;
+
+    
+      if (remaining > 60) {
+        countBox.style.color = "green";
+      } else if (remaining > 30) {
+        countBox.style.color = "orange";
+      } else {
+        countBox.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>

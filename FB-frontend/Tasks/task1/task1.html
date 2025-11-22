@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple To Do</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        #taskInput {
+            padding: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        ul {
+            margin-top: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        li {
+            padding: 6px;
+            margin-bottom: 5px;
+            background: #f0f0f0;
+        }
+
+        li button {
+            margin-left: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <h2>To Do List</h2>
+
+    <input id="taskInput" type="text" placeholder="Enter task">
+
+    <label for="course">Choose Priority:</label>
+<select id="importance">
+  <option value="low">low</option>
+  <option value="Medium">Medium</option>
+  <option value="high">high</option>
+</select>
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+ <script>
+
+
+var saved = localStorage.getItem("tasks");
+var tasks = [];
+
+if (saved) {
+    tasks = JSON.parse(saved);
+    showTasks();
+}
+
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function addTask() {
+    var input = document.getElementById("taskInput");
+    var text = input.value;
+
+    if (text === "") {
+        alert("Please enter something");
+        return;
+    }
+
+    tasks.push(text);
+    saveTasks();
+    showTasks();
+
+    input.value="";
+}
+
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    saveTasks();
+    showTasks();
+}
+
+
+
+function showTasks() {
+    var list = document.getElementById("taskList");
+    list.innerHTML = "";
+
+    for (var i = 0; i < tasks.length; i++) {
+        var li = document.createElement("li");
+        li.innerHTML =
+            tasks[i]  +
+            " <button onclick='deleteTask(" + i + ")'>Delete</button>";
+           
+        list.appendChild(li);
+    }
+}
+
+</script>
+
+
+</body>
+</html>

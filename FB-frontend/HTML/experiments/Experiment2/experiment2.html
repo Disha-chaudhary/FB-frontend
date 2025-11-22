@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Academic Timetable</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 24px;
+      background: #f7f8fb;
+      color: #111;
+    }
+
+    table {
+      width: 100%;
+      max-width: 900px;
+      border-collapse: collapse;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    caption {
+      font-size: 20px;
+      font-weight: 600;
+      padding: 12px 0;
+      text-align: left;
+    }
+
+    thead th {
+      background: #0b74de;
+      color: white;
+      padding: 10px 8px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    tbody td, thead th, tfoot td {
+      border: 1px solid #e6e9ee;
+      padding: 10px 8px;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 14px;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: #fcfeff;
+    }
+
+    .time-col {
+      text-align: left;
+      background: #f0f4f8;
+      font-weight: 600;
+      width: 110px;
+    }
+
+    .lab {
+      background: #fff4e6;
+    }
+
+    .lecture {
+      background: #e8f7ff;
+    }
+
+    .tutorial {
+      background: #eafbe6;
+    }
+
+    tfoot td {
+      background: #f7f9fc;
+      font-size: 13px;
+      text-align: left;
+      padding: 8px 12px;
+    }
+
+    @media (max-width: 700px) {
+      table { font-size: 13px; }
+      .time-col { width: 90px; }
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <caption>BSc Computer Science — Weekly Timetable (Sample)</caption>
+
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td class="time-col">09:00 – 10:00</td>
+        <td class="lecture">Intro to CS<br><small>Room 101</small></td>
+        <td class="lecture">Mathematics I<br><small>Room 201</small></td>
+        <td class="lecture">Data Structures<br><small>Room 102</small></td>
+        <td class="lecture">Computer Org.<br><small>Room 101</small></td>
+        <td class="tutorial">Problem Solving<br><small>Room 301</small></td>
+      </tr>
+
+      <tr>
+        <td class="time-col">10:00 – 11:00</td>
+        <td class="lecture">Intro to CS<br><small>Room 101</small></td>
+        <td class="lecture">Mathematics I<br><small>Room 201</small></td>
+        <td class="lab">Algorithms Lab<br><small>Lab A</small></td>
+        <td class="lecture">Computer Org.<br><small>Room 101</small></td>
+        <td class="lecture">Database Systems<br><small>Room 202</small></td>
+      </tr>
+
+      <tr>
+        <td class="time-col">11:00 – 12:00</td>
+        <td class="lecture">Software Eng.<br><small>Room 203</small></td>
+        <td class="tutorial">Math Tutorial<br><small>Room 201</small></td>
+        <td class="lecture">Data Structures<br><small>Room 102</small></td>
+        <td class="lecture">Algorithms<br><small>Room 103</small></td>
+        <td class="lecture">Database Systems<br><small>Room 202</small></td>
+      </tr>
+
+      <tr>
+        <td class="time-col">12:00 – 13:00</td>
+        <td colspan="5" style="text-align:center; font-style:italic;">Lunch Break</td>
+      </tr>
+
+      <tr>
+        <td class="time-col">13:00 – 14:00</td>
+        <td class="lab">Programming Lab<br><small>Lab B</small></td>
+        <td class="lecture">Computer Networks<br><small>Room 204</small></td>
+        <td class="lecture">Software Eng.<br><small>Room 203</small></td>
+        <td class="lab">Programming Lab<br><small>Lab B</small></td>
+        <td class="lecture">Project Work<br><small>Room 305</small></td>
+      </tr>
+
+      <tr>
+        <td class="time-col">14:00 – 15:00</td>
+        <td class="lecture">Computer Networks<br><small>Room 204</small></td>
+        <td class="lab">Networks Lab<br><small>Lab C</small></td>
+        <td class="tutorial">Data Structures Tut.<br><small>Room 102</small></td>
+        <td class="lecture">Algorithms<br><small>Room 103</small></td>
+        <td class="lecture">Elective: AI Basics<br><small>Room 210</small></td>
+      </tr>
+
+      <tr>
+        <td class="time-col">15:00 – 16:00</td>
+        <td class="tutorial">CS Tutorial<br><small>Room 101</small></td>
+        <td class="lecture">Database Systems<br><small>Room 202</small></td>
+        <td class="lecture">Computer Graphics<br><small>Room 220</small></td>
+        <td class="lecture">Elective: AI Basics<br><small>Room 210</small></td>
+        <td class="lab">Project Lab<br><small>Lab D</small></td>
+      </tr>
+
+      <tr>
+        <td class="time-col">16:00 – 17:00</td>
+        <td class="lecture">Seminar / Guest Talk<br><small>Auditorium</small></td>
+        <td class="lecture">Office Hours<br><small>Staff Room</small></td>
+        <td class="lecture">Computer Graphics<br><small>Room 220</small></td>
+        <td class="tutorial">Algorithms Tut.<br><small>Room 103</small></td>
+        <td class="lecture">Revision / Doubts<br><small>Room 305</small></td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="6">
+          <strong>Notes:</strong>
+          Timetable is a sample. Rooms and instructors subject to change. Labs are marked in yellow, lectures in blue, tutorials in green.
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Form</title>
+</head>
+
+<body>
+
+<form id="emailForm">
+    <input type="email" id="emailInput" placeholder="Enter your email">
+    <button type="submit">Submit</button>
+</form>
+
+<p id="message" style="font-size:18px; margin-top:10px;"></p>
+
+<script>
+    const form = document.getElementById("emailForm");
+    const input = document.getElementById("emailInput");
+    const msg = document.getElementById("message");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();   // stop page refresh
+
+        const email = input.value;
+
+        msg.innerText = "Welcome, " + email + "!";
+    });
+</script>
+
+</body>
+</html>

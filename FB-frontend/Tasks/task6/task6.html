@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sequential Promises</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .highlight { font-weight: bold; color: darkblue; }
+  </style>
+</head>
+<body>
+
+  <h2>Sequential Promise Execution</h2>
+  <ul id="output"></ul>
+
+  <script>
+    // Utility function to create a promise with 1s delay
+    function createStepPromise(text) {
+      return new Promise(resolve => {
+        setTimeout(() => resolve(text), 1000);
+      });
+    }
+
+    const output = document.getElementById("output");
+
+    function addListItem(text, highlight = false) {
+      const li = document.createElement("li");
+      li.textContent = text;
+      if (highlight) li.classList.add("highlight");
+      output.appendChild(li);
+      return li;
+    }
+
+    // ===== Option 1: Using .then() Chaining =====
+    /*
+    let li1 = addListItem("Executing Step 1...", true);
+    createStepPromise("Step 1 done")
+      .then(r1 => {
+        li1.classList.remove("highlight");
+        li1.textContent = r1;
+
+        let li2 = addListItem("Executing Step 2...", true);
+        return createStepPromise("Step 2 done").then(r2 => {
+          li2.classList.remove("highlight");
+          li2.textContent = r2;
+        });
+      })
+      .then(() => {
+        let li3 = addListItem("Executing Step 3...", true);
+        return createStepPromise("Step 3 done").then(r3 => {
+          li3.classList.remove("highlight");
+          li3.textContent = r3;
+        });
+      });
+    */
+
+    // ===== Option 2: Using async/await (Cleaner) =====
+    async function runSequential() {
+      let li1 = addListItem("Executing Step 1...", true);
+      let r1 = await createStepPromise("Step 1 done");
+      li1.classList.remove("highlight");
+      li1.textContent = r1;
+
+      let li2 = addListItem("Executing Step 2...", true);
+      let r2 = await createStepPromise("Step 2 done");
+      li2.classList.remove("highlight");
+      li2.textContent = r2;
+
+      let li3 = addListItem("Executing Step 3...", true);
+      let r3 = await createStepPromise("Step 3 done");
+      li3.classList.remove("highlight");
+      li3.textContent = r3;
+    }
+
+    runSequential();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Card Studio</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+        }
+
+        .card {
+            width: 250px;
+            border: 2px solid black;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .card h2 {
+            margin: 5px 0;
+        }
+
+        .skills {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill {
+            background: lightgray;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+
+        #details {
+            margin-top: 8px;
+            display: none;
+        }
+
+        .controls input, .controls button, .controls select {
+            margin: 5px 0;
+            padding: 6px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Profile Card Studio</h1>
+
+    <div class="container">
+
+        <div class="card" id="card">
+            <h2 id="cardName">Disha Chaudhary</h2>
+            <p id="cardRole">Student</p>
+            <p id="cardBio">This is a simple bio.</p>
+
+            <div id="details">
+                <p><b>Extra Details:</b> Likes coding, coffee, and music.</p>
+            </div>
+
+            <h3>Skills:html,CSS,JS</h3>
+            <div class="skills" id="skillBox"></div>
+        </div>
+
+       
+        <div class="controls">
+            <h3>Update Card</h3>
+
+            <input type="text" id="nameInput" placeholder="Enter Name">
+            <input type="text" id="roleInput" placeholder="Enter Role">
+            <input type="text" id="bioInput" placeholder="Enter Bio">
+
+            <button onclick="updateText()">Update Text</button>
+
+            <button onclick="toggleDetails()">Show/Hide Details</button>
+
+            <hr>
+
+            <input type="text" id="skillInput" placeholder="Add Skill">
+            <button onclick="addSkill()">Add Skill</button>
+
+            <button onclick="removeSkill()">Remove Last Skill</button>
+
+            <hr>
+
+            <select id="themeSelect" onchange="changeTheme()">
+                <option value="lightblue">Light Blue</option>
+                <option value="lightgreen">Light Green</option>
+                <option value="lightpink">Light Pink</option>
+                <option value="lightyellow">Light Yellow</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+        
+        function updateText() {
+            var n = document.getElementById("nameInput").value;
+            var r = document.getElementById("roleInput").value;
+            var b = document.getElementById("bioInput").value;
+
+            if (n !== "") {
+                document.getElementById("cardName").innerText = n;
+            }
+
+            if (r !== "") {
+                document.getElementById("cardRole").innerText = r;
+            }
+
+            if (b !== "") {
+                document.getElementById("cardBio").innerText = b;
+            }
+        }
+
+        function toggleDetails() {
+            var d = document.getElementById("details");
+
+            if (d.style.display === "none") {
+                d.style.display = "block";
+            } else {
+                d.style.display = "none";
+            }
+        }
+
+        
+    
+        function changeTheme() {
+            var color = document.getElementById("themeSelect").value;
+            var card = document.getElementById("card");
+
+            card.style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+</html>
