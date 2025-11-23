@@ -6,6 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- events make pages interactive-they detect user actions like clicks, key presses, or mouse movements and respond accordingly. Common events include 'click', 'mouseover', 'mouseout', 'keydown', and 'submit'. Event listeners are functions that wait for specific events to occur on elements and execute code in response. They can be added using methods like addEventListener(). For example, a button click event can trigger a function that displays an alert or changes the content of a webpage. -->
+
+    <button id="btn">CLICK ME</button>
+
+    <script>
+        const btn=document.getElementById("btn");
+        btn.addEventListener("mouseover",function(){
+            alert("button clicked");
+        })
+    </script>
 </body>
 </html>
