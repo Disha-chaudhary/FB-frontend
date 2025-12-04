@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            justify-content:space-around;
+            gap:20px;
+
+        }
+        .card{
+            
+            border:2px solid black;
+           padding :10px;
+
+
+        }
+        .card:hover{
+            box-shadow:5px 5px 15px grey;
+            background-color:lightblue;
+            transition:0.4s;
+            scale:1.05;
+        }
+        @media(max-width:600px)and (min-width:300px){
+            .container{
+                flex-direction:column;
+                align-items:center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Card Layout </h1>
+    <div class="container">
+        <div class="card" id="card1">
+            <h2>Card Title 1</h2>
+            <p>This is a description for card 1.</p>
+        </div>
+        <div class="card" id="card2">
+            <h2>Card Title 2</h2>
+            <p>This is a description for card 2.</p>
+        </div>
+        <div class="card" id="card3">
+            <h2>Card Title 3</h2>
+            <p>this is a description for card 2</p>
+        </div>
+    </div>
+</body>
+</html>
